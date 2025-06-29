@@ -32,7 +32,12 @@ private val LightColorScheme = lightColorScheme(
     onSurface = Color(0xFF1C1B1F),
     */
 )
-
+private val LightColors = lightColorScheme(
+    primary = androidx.compose.ui.graphics.Color(0xFF1976D2),
+    onPrimary = androidx.compose.ui.graphics.Color.White,
+    background = androidx.compose.ui.graphics.Color.White,
+    onBackground = androidx.compose.ui.graphics.Color.Black,
+)
 @Composable
 fun WascoAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -53,6 +58,16 @@ fun WascoAppTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        content = content
+    )
+}
+@Composable
+fun LoginAppTheme(
+    content: @Composable () -> Unit
+) {
+    MaterialTheme(
+        colorScheme = LightColors,
+        typography = androidx.compose.material3.Typography(),
         content = content
     )
 }
